@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.botao-abrir {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.botao-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.botao-fechar:hover,
+.botao-fechar:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.input-grupo {
+    display: flex;
+    margin-top: 20px;
+}
+
+.input-grupo input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.botao-buscar {
+    padding: 10px 20px;
+    border: none;
+    background-color: #e91111;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* --- CSS DA LINHA DO TEMPO DE RASTREAMENTO --- */
+
+.timeline-container {
+    padding: 15px;
+    position: relative;
+    /* Linha vertical cinza */
+    border-left: 3px solid #e9ecef;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-left {
+    width: 80px;
+    text-align: right;
+    padding-right: 20px;
+    flex-shrink: 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -11px; /* Posiciona o ícone exatamente sobre a linha */
+    top: 0;
+    background-color: #007bff;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+/* Cor diferente para o último status (ex: postado) */
+.timeline-item.status-inicio .timeline-icon {
+    background-color: #6c757d;
+}
+
+.timeline-content {
+    padding-left: 25px;
+    flex-grow: 1;
+}
+
+.timeline-content h5 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #343a40;
+}
+
+.timeline-content p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Formatação da data e hora */
+.timeline-date {
+    display: block;
+    font-weight: bold;
+}
+.timeline-time {
+    display: block;
+}
+#captchaContainerWrapper{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.informacoes{
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 500px;
+}
+.lista-informacoes{
+    list-style: none;
+    padding: 0;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.l-informacoes{
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+}
+.modal-title{
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}

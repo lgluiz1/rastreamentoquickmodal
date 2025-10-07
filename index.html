@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Carga</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+    <button id="abrirModal" class="botao-abrir">Rastrear Carga</button>
+
+    <div id="meuModal" class="modal-overlay">
+        <div class="modal-conteudo">
+            <button id="fecharModal" class="botao-fechar">&times;</button>            
+            <div class="modal-header">
+            <h2 class="modal-title"><i class="fas fa-truck"></i> Rastreie aqui a sua encomenda</h2>
+            <div class="informacoes">
+                <div class="informacoes-texto">
+                    <h5>Pesquise com um desses:</h5>
+                    <ul class="lista-informacoes">
+                        <li class="l-informacoes"><i class="fas fa-info-circle"></i> Numero da NF-e</li>
+                        <li class="l-informacoes"><i class="fas fa-shield-alt"></i> Chave da NF-e</li>
+                        <li class="l-informacoes"><i class="fas fa-info-circle"></i> Numero do CT-e</li>
+                        <li class="l-informacoes"><i class="fas fa-shield-alt"></i> Chave do CT-e</li>
+                    </ul>
+                </div> 
+                <img src="quick.png" alt="" width="30%">
+            </div>
+            
+            </div>
+            <div class="input-grupo">
+                <input type="text" id="codigoRastreio" placeholder="Digite número da NF-e, CT-e ou chave" />
+            </div>
+
+            <!-- Aqui o CAPTCHA será injetado dinamicamente -->
+            <div id="captchaContainerWrapper">
+                <p>Verificando se nao e um robô</p>
+            </div>
+
+            <button id="buscar" class="botao-buscar">Buscar</button>
+
+            <div id="loading" class="loading-spinner" style="display: none;"></div>
+            <div id="resultado"></div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
